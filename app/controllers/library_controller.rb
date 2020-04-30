@@ -4,15 +4,15 @@ class LibraryController < ApplicationController
   end
 
   def add
-
+    
   end
 
   def show
-
+    @book = Book.find(params[:id])
   end
 
   def new
-
+   @book = Book.new
   end
 
   def create
@@ -20,7 +20,7 @@ class LibraryController < ApplicationController
   end
 
   def edit
-
+    @book = Book.find(params[:id])
   end
 
   def update
