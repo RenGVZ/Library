@@ -4,7 +4,7 @@ class LibraryController < ApplicationController
   end
 
   def add
-    
+    @book = Book.new
   end
 
   def show

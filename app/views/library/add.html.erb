@@ -1,2 +1,13 @@
 <h1 class="title">Add a new book here!</h1>
 
+<%= form_for @book, url: library_add_path(@book), html: { method: :put } do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :pages %>
+  <%= f.number_field :pages %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <%= f.submit %>
+<% end %>
