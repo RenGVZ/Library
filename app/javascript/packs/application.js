@@ -4,7 +4,7 @@ require("channels")
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('scroll', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
 });
