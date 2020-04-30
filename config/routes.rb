@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   # Root
   root to: 'library#index'
+  get '/add', to: 'library#add'
+
   resources :library
   # # Read all
   # get '/books', to: 'library#index'
