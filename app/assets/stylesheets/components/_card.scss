@@ -1,0 +1,15 @@
+.books {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  background-color: rgba(249, 249, 249, 0.776);
+  color: black;
+  margin: 30px;
+}
+
+.book-card-img {
+  height: 200px;
+  width: 200px;
+}
