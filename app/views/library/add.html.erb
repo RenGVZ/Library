@@ -1,6 +1,6 @@
 <h1 class="title">Add a new book here!</h1>
 
-<%= form_for @book, url: library_add_path(@book), html: { method: :put } do |f| %>
+<%= form_for @book, url: library_index_path(@book), html: { method: :post } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :author %>

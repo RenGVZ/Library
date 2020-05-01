@@ -5,15 +5,17 @@
       <div class="col-sm-12">
         <div class="books">
         <% @books.each do |book| %>
-          <div class="book-card align-items-center" style="width: 18rem;">
-            <%= image_tag "book.png", class:"book-card-img" %>
-            <div class="card-body">
-              <h3><%= book.title %></h1>
-              <p><%= book.author %></p>
-              <p><%= book.pages %> pages</p>
-              <p><%='⭐️'* book.rating %></p>
+            <div class="book-card align-items-center" style="width: 18rem;">
+              <%= image_tag "book.png", class:"book-card-img" %>
+              <%= link_to library_path(book), class: 'book-link' do %>
+                <div class="card-body">
+                  <h3><%= book.title %></h1>
+                  <p><%= book.author %></p>
+                  <p><%= book.pages %> pages</p>
+                  <p><%='⭐️'* book.rating %></p>
+                </div>
+              <% end %>
             </div>
-          </div>
         <% end %>
         
      <!-- <div class="book-card align-items-center" style="width: 18rem;">
@@ -23,33 +25,6 @@
             </div>
           </div>
       -->
-          <div class="book-card align-items-center" style="width: 18rem;">
-            <%= image_tag "book.png", class:"book-card-img" %>
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-
-          <div class="book-card align-items-center" style="width: 18rem;">
-            <%= image_tag "book.png", class:"book-card-img" %>
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-
-          <div class="book-card align-items-center" style="width: 18rem;">
-            <%= image_tag "book.png", class:"book-card-img" %>
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-
-          <div class="book-card align-items-center" style="width: 18rem;">
-            <%= image_tag "book.png", class:"book-card-img" %>
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
           
         </div>
       </div>
