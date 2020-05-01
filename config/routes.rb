@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   # Root
   root to: 'library#index'
 
-  resources :library
+  resources :library do 
+    collection do
+      get :top_rating
+    end
+  end
   # get 'library/add', to: 'library#add'
   # # Read all
   # get '/books', to: 'library#index'

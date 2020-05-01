@@ -36,6 +36,10 @@ class LibraryController < ApplicationController
     redirect_to library_index_path
   end
 
+  def top_rating
+    @book = Book.where(rating: 5)
+  end
+
   def book_params 
     params.require(:book).permit(:title, :author, :pages, :rating)
   end

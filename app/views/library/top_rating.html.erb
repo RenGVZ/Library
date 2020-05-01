@@ -1,0 +1,24 @@
+<div class="home-banner-full">
+  <h1>My Highest Rated Books</h1>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12">
+        <div class="books">
+        <% @book.each do |book| %>
+            <div class="book-card align-items-center" style="width: 18rem;">
+              <%= image_tag "book.png", class:"book-card-img" %>
+              <%= link_to library_path(book), class: 'book-link' do %>
+                <div class="card-body">
+                  <h3><%= book.title %></h1>
+                  <p><%= book.author %></p>
+                  <p><%= book.pages %> pages</p>
+                  <p><%='⭐️'* book.rating %></p>
+                </div>
+              <% end %>
+            </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

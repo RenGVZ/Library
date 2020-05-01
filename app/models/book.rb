@@ -3,4 +3,6 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :pages, presence: true
   validates :rating, inclusion: {  in: 1..5 }
+
+  has_many :reviews, dependent: :destroy
 end
