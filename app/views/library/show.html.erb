@@ -2,5 +2,12 @@
   <div class="single-info">
     <h1><%= @book.title %></h1>
     <p><%= @book.author %></p>
+    <p>Your rating: <%= '⭐️'* @book.rating %></p>
+    <div>
+      <%= link_to "Edit #{@book.title}", edit_library_path(@book), class: 'btn btn-primary' %>
+      <%= link_to "Back to Library", library_index_path, class: 'btn btn-warning' %>
+      <i class="fas fa-trash"><%= link_to "Delete #{@book.title}", library_path(@book), method: :delete,
+            data: { confirm: "Are you sure?" } %></i>
+    </div>
   </div> 
 </div>

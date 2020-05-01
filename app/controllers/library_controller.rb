@@ -27,11 +27,17 @@ class LibraryController < ApplicationController
   end
 
   def update
+    @book = Book.find(params[:id])
+    @book.update(book_params)
 
+    redirect_to library_path(@book)
   end
 
   def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
 
+    redirect_to library_index_path
   end
 
   def book_params 
