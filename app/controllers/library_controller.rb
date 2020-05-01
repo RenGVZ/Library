@@ -40,6 +40,8 @@ class LibraryController < ApplicationController
     @book = Book.where(rating: 5)
   end
 
+  private
+
   def book_params 
     params.require(:book).permit(:title, :author, :pages, :rating)
   end

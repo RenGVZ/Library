@@ -1,0 +1,6 @@
+<h1 class="title">Review </h1>
+
+<%= simple_form_for [ @book, @review ], url: library_reviews_path, html: { method: :post } do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
