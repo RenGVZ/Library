@@ -1,24 +1,24 @@
 <div class="home-banner-full">
-  <div class="single-box">
-    <div class="single-info">
-      <h1><%= @book.title %></h1>
-      <p><%= @book.author %></p>
-      <p>Your rating: <%= '⭐️'* @book.rating %></p>
-
-      <ul class="list-group">
-        <% @book.reviews.each do |review| %>
-          <li class=""><%= review.content %></li>
-        <% end %>
-      </ul>
-
-      <div>
-        <%= link_to "Edit #{@book.title}", edit_library_path(@book), class: 'btn btn-primary' %>
-        <%= link_to "Back to Library", library_index_path, class: 'btn btn-warning' %>
-        <button class="btn btn-danger"><i class="fas fa-trash" ><%= link_to "Delete #{@book.title}", library_path(@book), method: :delete,
-              data: { confirm: "Are you sure?" }, style: "color: white; font-weight: bold;"%></i>
-        </button>
+  <div class="book-card" style="width: 18rem; margin: auto;">
+    <%= image_tag "book.png", class:"book-card-img" %>
+      <div class="card-body">
+        <h3><%= @book.title %></h1>
+        <p><%= @book.author %></p>
+        <p><%= @book.pages %> pages</p>
+        <p><%='⭐️'* @book.rating %></p>
       </div>
-        <%= link_to "Review #{@book.title}", new_library_review_path(@book) %>
-    </div> 
+  </div>
+  <div class="show-options">
+    <%= link_to "Back to Library", library_index_path, class: 'btn btn-warning' %>
+    <%= link_to "Edit #{@book.title}", edit_library_path(@book), class: 'btn btn-primary' %>
+    <button class="btn btn-danger"><i class="fas fa-trash" ><%= link_to "Delete #{@book.title}", library_path(@book), method: :delete,
+          data: { confirm: "Are you sure?" }, style: "color: white; font-weight: bold;"%></i>
+    </button>
+    <%= link_to "Review #{@book.title}", new_library_review_path(@book), class: 'btn btn-success', style: 'color: white;' %>
+    <ul style="list-style: none; padding: 0;">
+      <% @book.reviews.each do |review| %>
+        <li class="list-group-item-dark"><%= review.content %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
