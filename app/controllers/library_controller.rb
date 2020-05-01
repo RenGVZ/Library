@@ -16,7 +16,10 @@ class LibraryController < ApplicationController
   end
 
   def create
+    @book = Book.new(book_params)
+    @book.save
 
+    redirect_to library_path(@book)
   end
 
   def edit
@@ -29,5 +32,9 @@ class LibraryController < ApplicationController
 
   def destroy
 
+  end
+
+  def book_params 
+    params.require(:book).permit(:title, :author, :pages, :rating)
   end
 end
