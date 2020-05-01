@@ -1,6 +1,22 @@
-<h1 class="title">Edit a book's information</h1>
+<div class=home-banner-full>
+  <h1 class="title">Update <%= @book.title %>'s information</h1>
+  <div class="form-sheet">
+    <%= simple_form_for @book, url: library_path(@book), html: { method: :patch } do |f| %>
+      <%= f.input :title %>
+      <%= f.input :author %>
+      <%= f.input :pages %>
+      <%= f.input :rating, required: true, collection: 1..5 %>
+      <div class="submit-div">
+        <%= f.button :submit, "Update!", class: "add-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<%= form_for @book, url: library_path(@book), html: { method: :patch } do |f| %>
+
+
+
+<!-- <%= form_for @book, url: library_path(@book), html: { method: :patch } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :author %>
@@ -11,3 +27,4 @@
   <%= f.number_field :rating %>
   <%= f.submit %>
 <% end %>
+-->

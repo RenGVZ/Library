@@ -1,13 +1,14 @@
-<h1 class="title">Add a new book here!</h1>
-
-<%= form_for @book, url: library_index_path(@book), html: { method: :post } do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-  <%= f.label :pages %>
-  <%= f.number_field :pages %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.submit %>
-<% end %>
+<div class=home-banner-full>
+  <h1 class="title">Add a new book here!</h1>
+  <div class="form-sheet">
+    <%= simple_form_for @book, url: library_index_path(@book), html: { method: :post } do |f| %>
+      <%= f.input :title, placeholder: "Please specify the book" %>
+      <%= f.input :author, placeholder: 'Who wrote it?' %>
+      <%= f.input :pages %>
+      <%= f.input :rating, required: true, collection: 1..5 %>
+      <div class="submit-div">
+        <%= f.button :submit, "Add!", class: "add-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
