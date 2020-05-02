@@ -17,7 +17,9 @@
     <%= link_to "Review #{@book.title}", new_library_review_path(@book), class: 'btn btn-success', style: 'color: white;' %>
     <ul style="list-style: none; padding: 0;">
       <% @book.reviews.each do |review| %>
-        <li class="list-group-item-dark"><%= review.content %></li>
+        <li class="list-group-item"><%= review.content %>
+        <%= link_to "Remove", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>
+        </li>
       <% end %>
     </ul>
   </div>

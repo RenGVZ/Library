@@ -10,8 +10,18 @@ class ReviewsController < ApplicationController
     @book = Book.find(params[:library_id])
     @review.book = @book
     @review.save
+    if @review.save
+      redirect_to library_path(@book)
+    else 
+      render :new
+    end
+  end
 
-    redirect_to library_path(@book)
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+
+    redirect_to library_path(@review.book)
   end
 
   private
