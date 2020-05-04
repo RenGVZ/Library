@@ -1,6 +1,12 @@
-<div class="home-banner-full">
+<div class="home-banner">
   <div class="book-card" style="width: 18rem; margin: auto;">
-    <%= image_tag "book.png", class:"book-card-img" %>
+    <div style="padding-top: 10px;">
+      <% if @book.photo.attached? %>
+        <%= cl_image_tag @book.photo.key, :width=>200, :height=>400, :crop=>"fill" %>
+      <% else %>
+        <%= image_tag "book.png", class:"book-card-img" %>
+      <% end %>
+    </div>
       <div class="card-body">
         <h3><%= @book.title %></h1>
         <p><%= @book.author %></p>

@@ -6,6 +6,7 @@
       <%= f.input :author %>
       <%= f.input :pages %>
       <%= f.input :rating, required: true, collection: 1..5 %>
+      <%= f.input :photo, as: :file %>
       <div class="submit-div">
         <%= f.button :submit, "Update!", class: "add-btn" %>
       </div>
